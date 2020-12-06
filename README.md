@@ -21,23 +21,23 @@ The above Java version was used to implement and compile this exercise.
 
 The IDE used for this project is IntelliJ v 2020.2.3 Ultimate edition, and this git repository contains all of the project libraries and artifacts needed to compile and execute the project.
 
-**Project Organization**
+**Project Structure**
 ------------------------
 
-This project is organized as a multi-module maven project, where each module corresponds to a layer of the application.  This layering approach conforms to a conventional hierarchical enterprise package format so that functionality is isolated to its appropriate layer of concern. This design approach tries to maintain the independence of each layer so that libraries and functionality can be more easily swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
+This is a three-tier structured, maven project. Each specific module represents a tier of the application.  This layering approach conforms to a conventional hierarchical enterprise package format, thus functionality is isolated to it's appropriate tier of concern. This design approach tries to maintain the independence of each tier so that libraries and functionality can easily be swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
 
 The layers include:
 
-- client (/client/src/main/java/org/andela/mbta/client)
-    - a client layer responsible for creating REST clients.  Note: SpringBoot has the older RestTemplate client implementation and a more recent WebClient rest. So, isolating rest-client functionality in this layer would allow one to use either type of rest-client
+- Client (/client/src/main/java/org/andela/mbta/client)
+    - a client layer responsible for creating REST clients.  Note: SpringBoot has the older RestTemplate client implementation and a more recent WebClient REST. So, isolating rest-client functionality in this layer would allow one to use either type of rest-client
     
-- service (/service/src/main/java/org/andela/mbta/service)
+- Service (/service/src/main/java/org/andela/mbta/service)
     - a service layer which is responsible for retrieving a specific type of MBTA information such as mbta Routes or Stops 
     
-- core (/core/src/main/java/org/andela/mbta/core)
-    - The business objects or POJOs are placed here. There is basically a mapping between JSON entities and their corresponding Java object. The mapping of JSON entities to Java objects occurs through deserialization.
+- Core (/core/src/main/java/org/andela/mbta/core)
+    - POJOs or business objects are placed here. There is mapping between JSON entities and their corresponding Java objects. The mapping of JSON entities to Java objects occurs through deserialization.
 
-**Exploration of MBTA V3 API through Postman**
+**MBTA V3 API evaluation via Postman**
 ----------------------------------------------
 
 There is a communication platform for API development known as Postman (https://www.postman.com/). Within postman we can send REST and SOAP  requests quckly, easily and directly. I used Postman to evaluate JSON information retrieved from MBTA website to determine how it can be leveraged for useful business purposes.
