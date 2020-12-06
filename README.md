@@ -43,7 +43,7 @@ The layers include:
 **Exploration of MBTA V3 API through Postman**
 ----------------------------------------------
 
-[Postman](https://www.postman.com/) is a collaboration platform for API development. Quickly and easily send REST and SOAP  requests directly within Postman. Before any coding, I used Postman extensively to evaluate the JSON information retrieved from the MBTA site to determine how it can be transformed and used for business purposes
+Postman (https://www.postman.com/) is a collaboration platform for API development. Quickly and easily send REST and SOAP  requests directly within Postman. Before any coding, I used Postman extensively to evaluate the JSON information retrieved from the MBTA site to determine how it can be transformed and used for business purposes
 
 In particular, I found these two cURL commands through Postman to be most useful as an entry point.
 - For Routes. **GET** `https://api-v3.mbta.com/routes?filter[type]=0,1`
@@ -90,7 +90,8 @@ Examples:
 	2. Ashmont to Arlington -> Redline, Greenline
 ```
 
-**Tests**
+***TESTS***
+-----------
 
 1.**Route Test**
 ----------------
