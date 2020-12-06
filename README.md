@@ -2,20 +2,17 @@
 **Engineering Interview Take-Home Coding Exercise**
 ---------------------------------------------------
 
-**MBTA**
---------
-
 **Problem description**
 -----------------------
+
+This is a coding exercise where you integrate with the Boston transportation system website https://mbta.com and use the data it provides to answer questions. 
 
 Boston's transportation system, the MBTA (https://mbta.com/), has a website with APIs
 https://api-v3.mbta.com/docs/swagger/index.html.
 You will not need an API key, but you might get rate-limited without one.
+
 The MBTA's documentation 
-https://api-v3.mbta.com/docs/swagger/index.html is written using
-OpenAPI/Swagger. If you haven't used Swagger before, this tutorial walks through the basics on an example project: 
-https://idratherbewriting.com/learnapidoc/pubapis_swagger.html
-The MBTA developer site recommends tools for generating code from their documentation. We advise you not to use these tools because they are heavyweight and unnecessary. Writing your own client code to interact directly with the APIs is most likely easier, and better demonstrates the skills we're interested in reviewing.
+https://api-v3.mbta.com/docs/swagger/index.html is written using OpenAPI/Swagger.
    
 **Java version:  1.8.0_151.**
 -----------------------------
