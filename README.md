@@ -20,10 +20,10 @@ The above Java version was used to implement and compile this exercise.
 
 The IDE used for this project is IntelliJ v 2020.2.3 Ultimate edition, and this git repository contains all of the project libraries and artifacts needed to compile and execute the project.
 
-**Project Organization**
+**Project Structure**
 ------------------------
 
-This project is organized as a multi-module maven project, where each module corresponds to a layer of the application.  This layering approach conforms to a conventional hierarchical enterprise package format so that functionality is isolated to its appropriate layer of concern. This design approach tries to maintain the independence of each layer so that libraries and functionality can be more easily swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
+This maven project organised in a three-tier structure, where each module corresponds to a layer of the application.  This layering depicts a conventional hierarchical enterprise package format, such that a specific functionality is performed by a distict layer of concern. This design approach tries to maintain the independence of each layer so that libraries and functionality can easily be swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
 
 The layers include:
 
