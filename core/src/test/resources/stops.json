@@ -1,0 +1,90 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "address": "Alewife Brook Pkwy and Cambridge Park Dr, Cambridge, MA 02140",
+        "at_street": null,
+        "description": null,
+        "latitude": 42.395428,
+        "location_type": 1,
+        "longitude": -71.142483,
+        "municipality": "Cambridge",
+        "name": "Alewife",
+        "on_street": null,
+        "platform_code": null,
+        "platform_name": null,
+        "vehicle_type": null,
+        "wheelchair_boarding": 1
+      },
+      "id": "place-alfcl",
+      "links": {
+        "self": "/stops/place-alfcl"
+      },
+      "relationships": {
+        "child_stops": {},
+        "facilities": {
+          "links": {
+            "related": "/facilities/?filter[stop]=place-alfcl"
+          }
+        },
+        "parent_station": {
+          "data": null
+        },
+        "recommended_transfers": {},
+        "route": {
+          "data": {
+            "id": "Red",
+            "type": "route"
+          }
+        },
+        "zone": {
+          "data": null
+        }
+      },
+      "type": "stop"
+    },
+    {
+      "attributes": {
+        "address": "College Ave and Elm St, Somerville, MA",
+        "at_street": null,
+        "description": null,
+        "latitude": 42.39674,
+        "location_type": 1,
+        "longitude": -71.121815,
+        "municipality": "Somerville",
+        "name": "Davis",
+        "on_street": null,
+        "platform_code": null,
+        "platform_name": null,
+        "vehicle_type": null,
+        "wheelchair_boarding": 1
+      },
+      "id": "place-davis",
+      "links": {
+        "self": "/stops/place-davis"
+      },
+      "relationships": {
+        "child_stops": {},
+        "facilities": {
+          "links": {
+            "related": "/facilities/?filter[stop]=place-davis"
+          }
+        },
+        "parent_station": {
+          "data": null
+        },
+        "recommended_transfers": {},
+        "route": {
+          "data": {
+            "id": "Red",
+            "type": "route"
+          }
+        },
+        "zone": {
+          "data": null
+        }
+      },
+      "type": "stop"
+    }
+    ]
+  }

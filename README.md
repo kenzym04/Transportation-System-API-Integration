@@ -1,19 +1,21 @@
-# AndelaMBTA
  
 **Engineering Interview Take-Home Coding Exercise**
 ---------------------------------------------------
 
+**MBTA**
+--------
+
 **Problem description**
 -----------------------
 
-This is a coding exercise where you integrate with the Boston transportation
-system website https://mbta.com and use the data it provides to answer questions.
-
-MBTA (https://mbta.com/) APIs
+Boston's transportation system, the MBTA (https://mbta.com/), has a website with APIs
 https://api-v3.mbta.com/docs/swagger/index.html.
-
+You will not need an API key, but you might get rate-limited without one.
 The MBTA's documentation 
-https://api-v3.mbta.com/docs/swagger/index.html
+https://api-v3.mbta.com/docs/swagger/index.html is written using
+OpenAPI/Swagger. If you haven't used Swagger before, this tutorial walks through the basics on an example project: 
+https://idratherbewriting.com/learnapidoc/pubapis_swagger.html
+The MBTA developer site recommends tools for generating code from their documentation. We advise you not to use these tools because they are heavyweight and unnecessary. Writing your own client code to interact directly with the APIs is most likely easier, and better demonstrates the skills we're interested in reviewing.
    
 **Java version:  1.8.0_151.**
 -----------------------------
@@ -21,28 +23,28 @@ The above Java version was used to implement and compile this exercise.
 
 The IDE used for this project is IntelliJ v 2020.2.3 Ultimate edition, and this git repository contains all of the project libraries and artifacts needed to compile and execute the project.
 
-**Project Structure**
+**Project Organization**
 ------------------------
 
-This is a three-tier structured, maven project. Each specific module represents a tier of the application.  This layering approach conforms to a conventional hierarchical enterprise package format, thus functionality is isolated to it's appropriate tier of concern. This design approach tries to maintain the independence of each tier so that libraries and functionality can easily be swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
+This project is organized as a multi-module maven project, where each module corresponds to a layer of the application.  This layering approach conforms to a conventional hierarchical enterprise package format so that functionality is isolated to its appropriate layer of concern. This design approach tries to maintain the independence of each layer so that libraries and functionality can be more easily swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
 
 The layers include:
 
-- Client (/client/src/main/java/org/andela/mbta/client)
-    - a client layer responsible for creating REST clients.  Note: SpringBoot has the older RestTemplate client implementation and a more recent WebClient REST. So, isolating rest-client functionality in this layer would allow one to use either type of rest-client
+- client (/client/src/main/java/org/andela/mbta/client)
+    - a client layer responsible for creating REST clients.  Note: SpringBoot has the older RestTemplate client implementation and a more recent WebClient rest. So, isolating rest-client functionality in this layer would allow one to use either type of rest-client
     
-- Service (/service/src/main/java/org/andela/mbta/service)
+- service (/service/src/main/java/org/andela/mbta/service)
     - a service layer which is responsible for retrieving a specific type of MBTA information such as mbta Routes or Stops 
     
-- Core (/core/src/main/java/org/andela/mbta/core)
-    - POJOs or business objects are placed here. There is mapping between JSON entities and their corresponding Java objects. The mapping of JSON entities to Java objects occurs through deserialization.
+- core (/core/src/main/java/org/andela/mbta/core)
+    - The business objects or POJOs are placed here. There is basically a mapping between JSON entities and their corresponding Java object. The mapping of JSON entities to Java objects occurs through deserialization.
 
-**MBTA V3 API Evaluation via Postman**
+**Exploration of MBTA V3 API through Postman**
 ----------------------------------------------
 
-There is a communication platform for API development known as Postman (https://www.postman.com/). Within postman we can send REST and SOAP  requests quckly, easily and directly. I used Postman to evaluate JSON information retrieved from MBTA website to determine how it can be leveraged for useful business purposes.
+[Postman](https://www.postman.com/) is a collaboration platform for API development. Quickly and easily send REST and SOAP  requests directly within Postman. Before any coding, I used Postman extensively to evaluate the JSON information retrieved from the MBTA site to determine how it can be transformed and used for business purposes
 
-It was through Postman evaluation that the below two URL commands turned out to be most significant as entry points.
+In particular, I found these two cURL commands through Postman to be most useful as an entry point.
 - For Routes. **GET** `https://api-v3.mbta.com/routes?filter[type]=0,1`
 - For Stops. **GET** `https://api-v3.mbta.com/stops?filter[route_type]=0,1&include=route,parent_station`
 
@@ -87,8 +89,7 @@ Examples:
 	2. Ashmont to Arlington -> Redline, Greenline
 ```
 
-***TESTS***
------------
+**Tests**
 
 1.**Route Test**
 ----------------
