@@ -37,7 +37,7 @@ The layers include:
 - Core (/core/src/main/java/org/andela/mbta/core)
     - POJOs or business objects are placed here. There is mapping between JSON entities and their corresponding Java objects. The mapping of JSON entities to Java objects occurs through deserialization.
 
-**MBTA V3 API evaluation via Postman**
+**MBTA V3 API Evaluation via Postman**
 ----------------------------------------------
 
 There is a communication platform for API development known as Postman (https://www.postman.com/). Within postman we can send REST and SOAP  requests quckly, easily and directly. I used Postman to evaluate JSON information retrieved from MBTA website to determine how it can be leveraged for useful business purposes.
