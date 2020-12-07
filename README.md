@@ -39,7 +39,7 @@ The layers include:
 **Evaluation of MBTA V3 API via Postman**
 ----------------------------------------------
 
-There is a communication platform for API development known as Postman(https://www.postman.com/). Postmn users can quickly and easily send REST and SOAP  requests directly within Postman. I used postman to evaluate JSON information retrieved from MBTA site to determine how it can be leveraged for business use.
+There is a communication platform for API development known as Postman (https://www.postman.com/). Postman users can send REST and SOAP requests quickly and directly within Postman. I used postman to evaluate JSON information retrieved from MBTA site to determine how the information can be leveraged for business use.
 
 As a result I found the below two URL commands to be significant as entry points.
 - For Routes. **GET** `https://api-v3.mbta.com/routes?filter[type]=0,1`
@@ -71,9 +71,9 @@ Extend your program so it displays the following additional information.
 2. The name of the subway route with the fewest stops as well as a count of its stops.
 3. A list of the stops that connect two or more subway routes along with the relevant route names for each of those stops.
 ```
-**Answer** :  With a list of subway stops (i.e. filter[route_type]=0,1) and the routes associated with each stop, do a frequency count using Java Streams. Stream the filtered list, create a map where (key = route name, value = frequency count) and then sort the  map by value and sorting in reverse from the highest to the lowest.  The resulting map will have the first map entry being the stop with the highest number of connections, decreasing to the last map entry that will have the stop with the lowest number of connections.
+**Answer** :  We can leverage what we have - that is, the routes associated with each stop and the list of subway stops (i.e. filter[route_type]=0,1), and perform frequency count using Java Streams. Stream the filtered list, create a map where (key = route name, value = frequency count) and then sort the  map by value and sorting in reverse from the highest to the lowest.  The resulting map will have the top map entries being the stops with the highest number of connections, with the number of connections decreasing to the last map entry that will have the stop with the lowest number of connections.
 
-To get the stops with more than 2 connections, filter the resulting map so that it only has stops with a route count >= 2.
+To get the stops with more than 2 connections, simply filter the resulting map so that it only has stops with a route count >= 2.
 
 ***QUE: 3***
 ------------
