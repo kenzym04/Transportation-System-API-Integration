@@ -1,5 +1,5 @@
  
-**Engineering Interview Take-Home Coding Exercise**
+**TRANSPORTATION SYSTEM API INTEGRATION CHALLENGE**
 ---------------------------------------------------
 
 **Problem description**
@@ -23,18 +23,18 @@ The IDE used for this project is IntelliJ v 2020.2.3 Ultimate edition, and this 
 **Project Structure**
 ------------------------
 
-This maven project organised in a three-tier structure, where each module corresponds to a layer of the application.  This layering depicts a conventional hierarchical enterprise package format, such that a specific functionality is performed by a distict layer of concern. This design approach tries to maintain the independence of each layer so that libraries and functionality can easily be swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
+This is a maven project organised in a three-tier structure, where each module corresponds to a layer of the application.  This layering depicts a conventional hierarchical enterprise package format, such that a specific functionality is performed by a distinct layer of concern. This design approach tries to maintain the independence of each layer so that libraries and functionality can easily be swapped in or out. Each layer has its own pom.xml configuration file, but the overall project has a root level pom.xml file as the parent.
 
 The layers include:
 
 - client (/client/src/main/java/org/andela/mbta/client)
-    - a client layer responsible for creating REST clients.  Note: SpringBoot has the older RestTemplate client implementation and a more recent WebClient rest. So, isolating rest-client functionality in this layer would allow one to use either type of rest-client
+    - a client layer is responsible for creating REST clients.  SpringBoot still has the old RestTemplate client implementation and the recent WebClient rest. By isolating the rest-client functionality in this layer would allow one to use either type of rest-client.
     
 - service (/service/src/main/java/org/andela/mbta/service)
-    - a service layer which is responsible for retrieving a specific type of MBTA information such as mbta Routes or Stops 
+    - a service layer is responsible for retrieving specific type of MBTA information, that is mbta Routes or Stops.
     
 - core (/core/src/main/java/org/andela/mbta/core)
-    - The business objects or POJOs are placed here. There is basically a mapping between JSON entities and their corresponding Java object. The mapping of JSON entities to Java objects occurs through deserialization.
+    - POJOs/business objects are placed here. This layer sees to it the mapping between JSON entities and their corresponding Java object. The mapping of JSON entities to Java objects occurs through deserialization.
 
 **Evaluation of MBTA V3 API via Postman**
 ----------------------------------------------
