@@ -71,7 +71,7 @@ Extend your program so it displays the following additional information.
 2. The name of the subway route with the fewest stops as well as a count of its stops.
 3. A list of the stops that connect two or more subway routes along with the relevant route names for each of those stops.
 ```
-**Answer** :  We can leverage what we have - that is, the routes associated with each stop and the list of subway stops (i.e. filter[route_type]=0,1), and perform frequency count using Java Streams. Stream the filtered list, create a map where (key = route name, value = frequency count) and then sort the  map by value and sorting in reverse from the highest to the lowest.  The resulting map will have the top map entries being the stops with the highest number of connections, with the number of connections decreasing to the last map entry that will have the stop with the lowest number of connections.
+**Answer** :  We can leverage what we have - that is, the routes associated with each stop and the list of subway stops (i.e. filter[route_type]=0,1), and perform frequency count using Java Streams. Stream the filtered list, create a map where (key = route name, value = frequency count) and then sort the  map by value and sorting in reverse from the highest to the lowest.  The resulting map will have the top map entries being the stops with the highest number of connections, with the number of connections decreasing to the last map entry. The last map entry will have a stop with the lowest number of connections.
 
 To get the stops with more than 2 connections, simply filter the resulting map so that it only has stops with a route count >= 2.
 
